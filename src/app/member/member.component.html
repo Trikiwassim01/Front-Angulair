@@ -1,23 +1,5 @@
 <button routerLink="/create">Create New</button>
-<table border="1px">
-    <tr>
-        <td>ID</td>
-        <td>cin</td>
-        <td>name</td>
-        <td>type</td>
-        <td>createdDate</td>
-        <td>Actions</td>
-    </tr>
-    <tbody>
-        <tr *ngFor="let element of dataSource">
-            <td>{{element.id}}</td>
-            <td>{{element.cin}}</td>
-            <td>{{element.name}}</td>
-            <td>{{element.type}}</td>
-            <td>{{element.createdDate}}</td>
-           
-    </tbody>
-</table>
+
 
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
     <!-- Position Column -->

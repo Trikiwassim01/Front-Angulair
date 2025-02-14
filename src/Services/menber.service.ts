@@ -13,4 +13,6 @@ export class MenberService {
   GetAllMenbers():Observable<any[]>{
    return this.http.get<any[]>('http://localhost:3000/menbers')  
   }
+  addMenber(menber:any):Observable<void>{
+    return this.http.post<void>('http://localhost:3000/menbers',menber)}
 }
