@@ -12,12 +12,15 @@ import { MenberFormComponent } from './menber-form/menber-form.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
     AppComponent,
     MemberComponent,
-    MenberFormComponent
+    MenberFormComponent,
+    ConfirmDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -30,6 +33,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ,MatInputModule
     ,FormsModule
     ,ReactiveFormsModule
+    ,MatDialogModule
     
   ],
   providers: [],

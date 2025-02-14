@@ -1,23 +1,16 @@
 {
   "menbers": [
     {
-      "id": "1 ",
+      "id": "1",
       "cin": "12345",
       "name": "John",
       "type": "teacher",
       "createdDate": "2021-01-01"
     },
     {
-      "id": "2 ",
+      "id": "2",
       "cin": "12346",
       "name": "Doe",
-      "type": "student",
-      "createdDate": "2021-01-01"
-    },
-    {
-      "id": "ff25",
-      "cin": "1",
-      "name": "wassim",
       "type": "student",
       "createdDate": "2021-01-01"
     }
