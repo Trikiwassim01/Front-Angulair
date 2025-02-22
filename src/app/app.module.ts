@@ -14,13 +14,29 @@ import {MatInputModule} from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
 import {MatDialogModule} from '@angular/material/dialog';
+import { TemplateComponent } from './template/template.component';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatListModule} from '@angular/material/list';
+import {MatMenuModule} from '@angular/material/menu';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { ToolComponent } from './tool/tool.component';
+import { EventComponent } from './event/event.component';
+import { ArticleComponent } from './article/article.component';
+import { MatPaginatorModule} from '@angular/material/paginator';
+import { MatSortModule} from '@angular/material/sort';
 
 @NgModule({
   declarations: [
     AppComponent,
     MemberComponent,
     MenberFormComponent,
-    ConfirmDialogComponent
+    ConfirmDialogComponent,
+    TemplateComponent,
+    DashboardComponent,
+    ToolComponent,
+    EventComponent,
+    ArticleComponent
   ],
   imports: [
     BrowserModule,
@@ -34,6 +50,12 @@ import {MatDialogModule} from '@angular/material/dialog';
     ,FormsModule
     ,ReactiveFormsModule
     ,MatDialogModule
+    ,MatSidenavModule
+    ,MatToolbarModule
+    ,MatListModule
+    ,MatMenuModule
+    ,MatPaginatorModule
+    ,MatSortModule
     
   ],
   providers: [],
