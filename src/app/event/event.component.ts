@@ -4,6 +4,9 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Evt } from 'src/Models/Evt';
 import { EventService } from 'src/Services/event.service';
+import { ConfirmDialogComponent } from '../confirm-dialog/confirm-dialog.component';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { ModalEvtComponent } from '../modal-evt/modal-evt.component';
 
 @Component({
   selector: 'app-event',
@@ -11,12 +14,12 @@ import { EventService } from 'src/Services/event.service';
   styleUrls: ['./event.component.css']
 })
 export class EventComponent implements OnInit ,AfterViewInit{
-  constructor(private ES:EventService) {
-    
+  constructor(private ES:EventService,private dialog:MatDialog) {
+    this.dataSource = new MatTableDataSource()
    }
  // DataSource : Evt[] = [];
   dataSource!: MatTableDataSource<Evt> ;
-  displayedColumns: string[] = ['id', 'titre','dateeDebut','dateFin','lieu'];
+  displayedColumns: string[] = ['id', 'titre','dateeDebut','dateFin','lieu','actions'];
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
   applyFilter(event: Event) {
@@ -38,7 +41,51 @@ export class EventComponent implements OnInit ,AfterViewInit{
   }
   fetchData():void{
     this.ES.getAllEvents().subscribe((data)=>{
-      this.dataSource = new MatTableDataSource(data);
+      this.dataSource.data =data;
     }
     )}
+    open():void{
+       //lancer l'ouverture de la boite de ModalEvtComponent
+  const dialogRef = this.dialog.open(ModalEvtComponent, {
+    height: '400px',
+    width: '600px',
+  });
+
+  dialogRef.afterClosed().subscribe(data => {
+    console.log("Dialog output:", data);
+    // Check if data is not null or undefined
+    if (data) {
+      //requete post
+      this.ES.addEvent(data).subscribe(() => {
+        this.fetchData();
+      });
+    }
+  });
+
+              
+              
+    }
+    opendit(id:string)
+    {
+      //lancer l'ouverture du modal
+      const dialogConfig = new MatDialogConfig();
+      
+      //recuperer l'evenement par id
+      this.ES.getEventById(id).subscribe((data)=>{
+        dialogConfig.data=data
+        
+        this.dialog.open(ModalEvtComponent, dialogConfig);
+      });
+      // // //apres fermeture du modal
+      // // dialogRef.afterClosed().subscribe(data => {
+      // //   console.log("Dialog output:", data);
+      // //   // Check if data is not null or undefined
+      //       if (data) {
+      //       //requete put
+      //      this.ES.updateEvent(data,id).subscribe(() => {
+      //        this.fetchData();
+      //     });
+      //   }
+      //  });
+    }
 }

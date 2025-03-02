@@ -25,6 +25,9 @@ import { EventComponent } from './event/event.component';
 import { ArticleComponent } from './article/article.component';
 import { MatPaginatorModule} from '@angular/material/paginator';
 import { MatSortModule} from '@angular/material/sort';
+import { ModalEvtComponent } from './modal-evt/modal-evt.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -36,7 +39,8 @@ import { MatSortModule} from '@angular/material/sort';
     DashboardComponent,
     ToolComponent,
     EventComponent,
-    ArticleComponent
+    ArticleComponent,
+    ModalEvtComponent
   ],
   imports: [
     BrowserModule,
@@ -56,6 +60,8 @@ import { MatSortModule} from '@angular/material/sort';
     ,MatMenuModule
     ,MatPaginatorModule
     ,MatSortModule
+    ,MatDatepickerModule
+    ,MatNativeDateModule
     
   ],
   providers: [],

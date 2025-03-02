@@ -12,5 +12,13 @@ export class EventService {
   getAllEvents():Observable<Evt[]>{
     return this.http.get<Evt[]>('http://localhost:3000/Evt')
   }
+  addEvent(data:any):Observable<Evt>{
+    return this.http.post<Evt>('http://localhost:3000/Evt',data)
+  }
+  getEventById(id:string):Observable<Evt>{
+        return this.http.get<Evt>(`http://localhost:3000/Evt/${id}`)}
+        updateEvent(Evt:Evt,id:string):Observable<void>{
+          return this.http.put<void>(`http://localhost:3000/Evt/${id}`,Evt)
+        }
   
 }
