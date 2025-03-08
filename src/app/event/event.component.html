@@ -22,13 +22,14 @@
       <!-- Name Column -->
       <ng-container matColumnDef="dateeDebut">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> dateeDebut </th>
-        <td mat-cell *matCellDef="let row"> {{row.dateeDebut}} </td>
+        <td mat-cell *matCellDef="let row"> {{row.dateeDebut| date:'medium'}} </td>
       </ng-container>
+      <!-- le pipe date ne change pas le format de la date,il change que l'affichage de la date -->
   
       <!-- Fruit Column -->
       <ng-container matColumnDef="dateFin">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> dateFin</th>
-        <td mat-cell *matCellDef="let row"> {{row.dateFin}} </td>
+        <td mat-cell *matCellDef="let row"> {{row.dateFin|date}} </td>
       </ng-container>
       <ng-container matColumnDef="lieu">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> lieu </th>
@@ -38,7 +39,9 @@
         <th mat-header-cell *matHeaderCellDef mat-sort-header> actions </th>
         <td mat-cell *matCellDef="let row"> 
           <button (click)="opendit(row.id)"><mat-icon>edit</mat-icon></button>
-          <mat-icon>delete</mat-icon></td>
+          
+          <button (click)="delete(row.id)"><mat-icon> delete</mat-icon></button>
+        </td>
        
       </ng-container>
   

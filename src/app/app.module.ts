@@ -28,6 +28,7 @@ import { MatSortModule} from '@angular/material/sort';
 import { ModalEvtComponent } from './modal-evt/modal-evt.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
+import { PubDetailsComponent } from './pub-details/pub-details.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import {MatNativeDateModule} from '@angular/material/core';
     ToolComponent,
     EventComponent,
     ArticleComponent,
-    ModalEvtComponent
+    ModalEvtComponent,
+    PubDetailsComponent
   ],
   imports: [
     BrowserModule,

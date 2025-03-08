@@ -20,5 +20,8 @@ export class EventService {
         updateEvent(Evt:Evt,id:string):Observable<void>{
           return this.http.put<void>(`http://localhost:3000/Evt/${id}`,Evt)
         }
+        deleteEvent(id:string):Observable<void>{
+          return this.http.delete<void>(`http://localhost:3000/Evt/${id}`)
+        }
   
 }

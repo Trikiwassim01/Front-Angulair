@@ -17,21 +17,7 @@
   ],
   "Evt": [
     {
-      "id": "1",
-      "titre": "angular",
-      "dateeDebut": "2021-01-01",
-      "dateFin": "2021-01-01",
-      "lieu": "tunis"
-    },
-    {
       "id": "2",
-      "titre": "angular",
-      "dateeDebut": "2021-01-01",
-      "dateFin": "2021-01-01",
-      "lieu": "tunis"
-    },
-    {
-      "id": "3",
       "titre": "angular",
       "dateeDebut": "2021-01-01",
       "dateFin": "2021-01-01",
@@ -82,5 +68,32 @@
       "dateFin": "2025-02-14T23:00:00.000Z",
       "lieu": "sfax"
     }
+  ],
+  "pub":[
+    {
+    "id": "1",
+    "type": "string",
+    "titre": "gfgfg",
+    "lien": "sfax",
+    "date": "2021-12-12",
+    "sourcepdf": "string"
+    },
+    {
+    "id": "2",
+    "type": "string",
+    "titre": "gfgfg",
+    "lien": "sfax",
+    "date": "2021-12-12",
+    "sourcepdf": "string"
+    },
+    {
+    "id": "3",
+    "type": "string",
+    "titre": "gfgfg",
+    "lien": "sfax",
+    "date": "2021-12-12",
+    "sourcepdf": "string"
+    }
+   
   ]
 }

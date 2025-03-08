@@ -74,7 +74,13 @@ export class EventComponent implements OnInit ,AfterViewInit{
       this.ES.getEventById(id).subscribe((data)=>{
         dialogConfig.data=data
         
-        this.dialog.open(ModalEvtComponent, dialogConfig);
+      let dialogRef = this.dialog.open(ModalEvtComponent, dialogConfig);
+      //subscrire 
+      dialogRef.afterClosed().subscribe((data: any) => {
+        this.ES.updateEvent(data,id).subscribe(() => {
+          this.fetchData();
+        }
+        );
       });
       // // //apres fermeture du modal
       // // dialogRef.afterClosed().subscribe(data => {
@@ -88,4 +94,22 @@ export class EventComponent implements OnInit ,AfterViewInit{
       //   }
       //  });
     }
-}
+    )}
+    delete(id:string){
+      //lancer la boite de dialogue
+      let dialogRef = this.dialog.open(ConfirmDialogComponent, {
+        height: '400px',
+        width: '600px',
+      });
+      dialogRef.afterClosed().subscribe(result => {
+        if(result){
+          this.ES.deleteEvent(id).subscribe(()=>{
+            this.ES.getAllEvents().subscribe((data)=>{
+              this.dataSource.data =data;
+            })
+          })
+        }
+      });}
+      
+  
+  }
