@@ -29,6 +29,11 @@ import { ModalEvtComponent } from './modal-evt/modal-evt.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
 import { PubDetailsComponent } from './pub-details/pub-details.component';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFireModule } from '@angular/fire/compat';
+import { firebaseConfig } from './environment';
+import { LoginComponent } from './login/login.component';
+
 
 @NgModule({
   declarations: [
@@ -42,7 +47,8 @@ import { PubDetailsComponent } from './pub-details/pub-details.component';
     EventComponent,
     ArticleComponent,
     ModalEvtComponent,
-    PubDetailsComponent
+    PubDetailsComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -64,6 +70,8 @@ import { PubDetailsComponent } from './pub-details/pub-details.component';
     ,MatSortModule
     ,MatDatepickerModule
     ,MatNativeDateModule
+    ,AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireAuthModule,
     
   ],
   providers: [],

@@ -6,13 +6,24 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ToolComponent } from './tool/tool.component';
 import { EventComponent } from './event/event.component';
 import { ArticleComponent } from './article/article.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   {path: 'create', 
     pathMatch: 'full',
     component: MenberFormComponent},
     {
+      path: 'login',
+      pathMatch: 'full',
+      component: LoginComponent
+    },
+    {
       path: '',
+      redirectTo: 'login',
+      pathMatch: 'full'
+    },
+    {
+      path: 'members',
       pathMatch: 'full',
       component: MemberComponent
     },
