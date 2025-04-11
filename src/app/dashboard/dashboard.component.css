@@ -1,0 +1,35 @@
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .stats-cards {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .stat-card {
+    flex: 1;
+    min-width: 200px;
+    text-align: center;
+  }
+  
+  .charts {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .chart-wrapper {
+    text-align: center;
+  }
+  
+  .small-chart canvas {
+    max-width: 300px;
+    max-height: 300px;
+    width: 100%;
+    height: auto;
+  }

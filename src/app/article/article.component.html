@@ -31,7 +31,7 @@
     </ng-container>
     <ng-container matColumnDef="date">
         <th mat-header-cell *matHeaderCellDef> Date </th>
-        <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+        <td mat-cell *matCellDef="let element"> {{element.date|date}} </td>
       </ng-container>
       <ng-container matColumnDef="sourcepdf">
         <th mat-header-cell *matHeaderCellDef> sourcepdf </th>

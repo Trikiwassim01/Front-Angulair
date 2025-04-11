@@ -13,6 +13,13 @@
       "name": "Doe",
       "type": "student",
       "createdDate": "2021-01-01"
+    },
+    {
+      "id": "4878",
+      "cin": "1223",
+      "name": "jj",
+      "type": "student",
+      "createdDate": "2024-12-12"
     }
   ],
   "Evt": [
@@ -69,31 +76,62 @@
       "lieu": "sfax"
     }
   ],
-  "pub":[
+  "pub": [
     {
-    "id": "1",
-    "type": "string",
-    "titre": "gfgfg",
-    "lien": "sfax",
-    "date": "2021-12-12",
-    "sourcepdf": "string"
+      "id": "1",
+      "type": "string",
+      "titre": "gfgfg",
+      "lien": "sfax",
+      "date": "2021-12-12",
+      "sourcepdf": "string"
     },
     {
-    "id": "2",
-    "type": "string",
-    "titre": "gfgfg",
-    "lien": "sfax",
-    "date": "2021-12-12",
-    "sourcepdf": "string"
+      "id": "2",
+      "type": "string",
+      "titre": "gfgfg",
+      "lien": "sfax",
+      "date": "2021-12-12",
+      "sourcepdf": "string"
     },
     {
-    "id": "3",
-    "type": "string",
-    "titre": "gfgfg",
-    "lien": "sfax",
-    "date": "2021-12-12",
-    "sourcepdf": "string"
+      "id": "3",
+      "type": "string",
+      "titre": "gfgfg",
+      "lien": "sfax",
+      "date": "2021-12-12",
+      "sourcepdf": "string"
+    },
+    {
+      "id": "45e0",
+      "titre": "www",
+      "type": "steak-0",
+      "lien": "sfax",
+      "sourcepdf": "qqq",
+      "date": "2021-12-12"
+    },
+    {
+      "id": "11f7",
+      "titre": "mmm",
+      "type": "journal",
+      "lien": "sfax",
+      "sourcepdf": "fff",
+      "date": "2021-11-14"
+    },
+    {
+      "id": "d10e",
+      "titre": "fff",
+      "type": "journal",
+      "lien": "tunis",
+      "sourcepdf": "qqqq",
+      "date": "2025-04-16T23:00:00.000Z"
+    },
+    {
+      "id": "e0e8",
+      "titre": "lll",
+      "type": "workshop",
+      "lien": "qqq",
+      "sourcepdf": "aaa",
+      "date": "2025-04-20T23:00:00.000Z"
     }
-   
   ]
 }

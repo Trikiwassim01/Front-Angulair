@@ -4,6 +4,7 @@ import { pub } from 'src/Models/Pub';
 import { PubService } from 'src/Services/pub.service';
 import { PubDetailsComponent } from '../pub-details/pub-details.component';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { PubModalComponent } from '../pub-modal/pub-modal.component';
 
 @Component({
   selector: 'app-article',
@@ -33,26 +34,21 @@ export class ArticleComponent implements OnInit{
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
    open():void{
-  //        //lancer l'ouverture de la boite de ModalEvtComponent
-  //   const dialogRef = this.dialog.open(, {
-  //     height: '400px',
-  //     width: '600px',
-  //   });
-  
-  //   dialogRef.afterClosed().subscribe(data => {
-  //     console.log("Dialog output:", data);
-  //     // Check if data is not null or undefined
-  //     if (data) {
-  //       //requete post
-  //       this.ES.addEvent(data).subscribe(() => {
-  //         this.fetchData();
-  //       });
-  //     }
-  //   });
+    //ouverture de la boite de dialogue
+    //lancer la boite de dialogue
+    const x =new MatDialogConfig();
+    x.data=0;
+      let dialogRef = this.dialog.open(PubModalComponent,x );
+      dialogRef.afterClosed().subscribe((result) => {
+        if (result) {
+          this.PS.addPub(result).subscribe((data) => {
+            this.fetch();
+          });
+        }
   
                 
                 
-      }
+      })}
       openVis(id:string):void{
         //ouverture de la boite de dialogue
         //lancer la boite de dialogue

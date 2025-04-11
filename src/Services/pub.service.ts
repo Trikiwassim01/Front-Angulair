@@ -12,5 +12,11 @@ export class PubService {
   getAllPubs():Observable<pub[]>{
     return this.http.get<pub[]>('http://localhost:3000/pub')
   }
+  addPub(p:pub):Observable<pub>{
+    return this.http.post<pub>('http://localhost:3000/pub',p)
+  }
+  deletePub(id:string):Observable<pub>{
+    return this.http.delete<pub>('http://localhost:3000/pub/'+id)
+  }
   
 }
