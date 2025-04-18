@@ -17,6 +17,9 @@ export class DashboardComponent {
   nb_Tools: number = 0;
   nbTeachers: number = 0;
   nbStudents: number = 0;
+  nbsfax: number = 0;
+  nbsousse: number = 0;
+  nbtunis: number = 0;
   chartDatapie: ChartDataset[] = [
     {
       // ⤵️ Add these
@@ -25,6 +28,14 @@ export class DashboardComponent {
     }
   ];
   chartLabelspie: string[] = ['Teachers', 'Students'];
+  chartDatadoughnut: ChartDataset[] = [
+    {
+      // ⤵️ Add these
+      
+      data: [ ]
+    }
+  ];
+  chartLabelsdoughnut: string[] = ['sousse', 'tunis', 'sfax'];//labell c'est laxe des x
   chartData: ChartDataset[] = [
     {
       // ⤵️ Add these
@@ -57,6 +68,23 @@ export class DashboardComponent {
     this.ES.getAllEvents().subscribe(
       (data) => {
         this.nb_Events = data.length;
+        for (let i = 0; i < this.nb_Events; i++) {
+          if (data[i].lieu == 'sousse') {
+            this.nbsousse++;
+          }
+          else if (data[i].lieu == 'tunis') {
+            this.nbtunis++;
+          }
+          else if (data[i].lieu == 'sfax') {
+            this.nbsfax++;
+          }
+
+        }
+        this.chartDatadoughnut = [
+          {
+            data: [this.nbsousse, this.nbtunis, this.nbsfax]
+          }
+        ];
       }
     )
     this.pb.getAllPubs().subscribe(
