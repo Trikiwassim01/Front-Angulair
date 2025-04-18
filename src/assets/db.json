@@ -5,21 +5,172 @@
       "cin": "12345",
       "name": "John",
       "type": "teacher",
-      "createdDate": "2021-01-01"
+      "createdDate": "2021-01-01",
+      "tabEvent": [
+        {
+          "id": "2",
+          "titre": "angular",
+          "dateeDebut": "2021-01-01",
+          "dateFin": "2021-01-01",
+          "lieu": "tunis"
+        },
+        {
+          "id": "4",
+          "titre": "angular",
+          "dateeDebut": "2021-01-01",
+          "dateFin": "2021-01-01",
+          "lieu": "tunis"
+        }
+      ],
+      "tabOutil": [
+        {
+          "id": "1",
+          "titre": "angular",
+          "dateeDebut": "2021-01-01",
+          "dateFin": "2021-01-01",
+          "lieu": "tunis"
+        },
+        {
+          "id": "2",
+          "titre": "angular",
+          "dateeDebut": "2021-01-01",
+          "dateFin": "2021-01-01",
+          "lieu": "tunis"
+        }
+      ],
+      "tabPub": [
+        {
+          "id": "1",
+          "type": "string",
+          "titre": "gfgfg",
+          "lien": "sfax",
+          "date": "2021-12-12",
+          "sourcepdf": "string"
+        },
+        {
+          "id": "2",
+          "type": "string",
+          "titre": "gfgfg",
+          "lien": "sfax",
+          "date": "2021-12-12",
+          "sourcepdf": "string"
+        }
+      ]
     },
     {
       "id": "2",
       "cin": "12346",
       "name": "Doe",
       "type": "student",
-      "createdDate": "2021-01-01"
+      "createdDate": "2021-01-01",
+      "tabEvent": [
+        {
+          "id": "5",
+          "titre": "angular",
+          "dateeDebut": "2021-01-01",
+          "dateFin": "2021-01-01",
+          "lieu": "tunis"
+        },
+        {
+          "id": "6",
+          "titre": "angular",
+          "dateeDebut": "2021-01-01",
+          "dateFin": "2021-01-01",
+          "lieu": "tunis"
+        }
+      ],
+      "tabOutil": [
+        {
+          "id": "3",
+          "titre": "angular",
+          "dateeDebut": "2021-01-01",
+          "dateFin": "2021-01-01",
+          "lieu": "tunis"
+        },
+        {
+          "id": "4",
+          "titre": "angular",
+          "dateeDebut": "2021-01-01",
+          "dateFin": "2021-01-01",
+          "lieu": "tunis"
+        }
+      ],
+      "tabPub": [
+        {
+          "id": "3",
+          "type": "string",
+          "titre": "gfgfg",
+          "lien": "sfax",
+          "date": "2021-12-12",
+          "sourcepdf": "string"
+        },
+        {
+          "id": "45e0",
+          "titre": "www",
+          "type": "steak-0",
+          "lien": "sfax",
+          "sourcepdf": "qqq",
+          "date": "2021-12-12"
+        }
+      ]
     },
     {
       "id": "4878",
       "cin": "1223",
       "name": "jj",
       "type": "student",
-      "createdDate": "2024-12-12"
+      "createdDate": "2024-12-12",
+      "tabEvent": [
+        {
+          "id": "0fa8",
+          "titre": "React",
+          "dateeDebut": "2021-01-01",
+          "dateFin": "2021-01-01",
+          "lieu": "sfax"
+        }
+      ],
+      "tabOutil": [
+        {
+          "id": "5ef0",
+          "titre": "net",
+          "dateeDebut": "2025-02-01T23:00:00.000Z",
+          "dateFin": "2025-02-14T23:00:00.000Z",
+          "lieu": "sfax"
+        },
+        {
+          "id": "a1e6",
+          "titre": "React ",
+          "dateeDebut": "2021-01-01",
+          "dateFin": "2021-01-01",
+          "lieu": "tttt"
+        }
+      ],
+      "tabPub": [
+        {
+          "id": "11f7",
+          "titre": "mmm",
+          "type": "journal",
+          "lien": "sfax",
+          "sourcepdf": "fff",
+          "date": "2021-11-14"
+        },
+        {
+          "id": "d10e",
+          "titre": "fff",
+          "type": "journal",
+          "lien": "tunis",
+          "sourcepdf": "qqqq",
+          "date": "2025-04-16T23:00:00.000Z"
+        },
+        {
+          "id": "e0e8",
+          "titre": "lll",
+          "type": "workshop",
+          "lien": "qqq",
+          "sourcepdf": "aaa",
+          "date": "2025-04-20T23:00:00.000Z"
+        }
+      ]
     }
   ],
   "Evt": [
@@ -132,6 +283,14 @@
       "lien": "qqq",
       "sourcepdf": "aaa",
       "date": "2025-04-20T23:00:00.000Z"
+    },
+    {
+      "id": "54a5",
+      "titre": "qq",
+      "type": "conf",
+      "lien": "sfax",
+      "sourcepdf": "www",
+      "date": "2025-04-16T23:00:00.000Z"
     }
   ]
 }

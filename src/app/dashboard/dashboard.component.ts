@@ -4,6 +4,7 @@ import { MenberService } from 'src/Services/menber.service';
 import { PubService } from 'src/Services/pub.service';
 import { ChartDataset, ChartOptions } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts';
+import { concat } from 'rxjs';
 
 @Component({
   selector: 'app-dashboard',
@@ -20,6 +21,10 @@ export class DashboardComponent {
   nbsfax: number = 0;
   nbsousse: number = 0;
   nbtunis: number = 0;
+  tab_m: string[] = [];
+  NbEvt_M: number[] = [];
+  tab: string[] = [];
+  tab2: string[] = [];
   chartDatapie: ChartDataset[] = [
     {
       // ⤵️ Add these
@@ -39,11 +44,20 @@ export class DashboardComponent {
   chartData: ChartDataset[] = [
     {
       // ⤵️ Add these
-      label: '$ in millions',
-      data: [ 1551, 1688, 1800, 1895, 2124, 2124 ]
+      label: 'My First dataset',
+      data: [  ]
     }
   ];
-  chartLabels: string[] = ['April', 'May', 'June', 'July', 'August', 'September'];
+  chartLabels: string[] = [];
+  chartDatabar: ChartDataset[] = [
+    {
+      // ⤵️ Add these
+      label: 'My First dataset',
+      data: [  ]
+    }
+  ];
+  chartLabelsbar: string[] = [];
+
   chartOptions: ChartOptions = {};
   constructor(private MS:MenberService,private ES:EventService,private pb:PubService) {
     this.MS.GetAllMenbers().subscribe(
@@ -56,7 +70,20 @@ export class DashboardComponent {
           else if (data[i].type == 'student') {
             this.nbStudents++;
           }
+          console.log("Adding member name to chartLabels:", data[i].name); // Log each name
+          this.tab_m.push(data[i].name);
+          console.log("tab_m:", this.tab_m); // Log the entire array
+          this.NbEvt_M.push(data[i].tabEvent.length);
+          console.log( data[i].tabEvent.length);
+
         }
+        this.chartLabels = this.tab_m;
+        this.chartData = [
+          {
+            label: 'My First dataset',
+            data: this.NbEvt_M
+          }
+        ];
         this.chartDatapie = [
           {
             data: [this.nbTeachers, this.nbStudents]
@@ -80,6 +107,7 @@ export class DashboardComponent {
           }
 
         }
+        
         this.chartDatadoughnut = [
           {
             data: [this.nbsousse, this.nbtunis, this.nbsfax]
@@ -90,6 +118,21 @@ export class DashboardComponent {
     this.pb.getAllPubs().subscribe(
       (data) => {
         this.nb_Articles = data.length;
+        for (let i = 0; i < this.nb_Articles; i++) {
+          this.tab.push(data[i].type);
+        }
+       // this.tab2=[...new Set(this.tab)];
+       this.tab2=[...new Set(data.map((item) => item.type))];
+        this.chartLabelsbar = this.tab2;
+        for (let i = 0; i < this.tab2.length; i++) {
+          let count = 0;
+          for (let j = 0; j < this.nb_Articles; j++) {
+            if (this.tab2[i] == this.tab[j]) {
+              count++;
+            }
+          }
+          this.chartDatabar[0].data?.push(count);
+        }
       }
     )
   }
